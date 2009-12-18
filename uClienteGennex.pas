@@ -23,12 +23,16 @@ type
 
   TOnDiscarConf = procedure(const chave, servidor : AnsiString; const idMakeCall : Integer) of object;
 
+  // Equivalente ao popup (OnReceivedCall)
   TOnDadosChamada = procedure(const servidor, canal, telefone, chave : AnsiString; const idMakeCall : Integer) of object;
 
+  // Notifica o fim da chamada
   TOnFimChamada = procedure(const servidor, canal : AnsiString; const idMakeCall, codigoDesligamento : Integer; const chave : AnsiString) of object;
 
+  // Avisa o operador que o discador está realizando uma agenda pessoal
   TOnDiscandoAgp = procedure(const chave : AnsiString) of object;
 
+  // Avisa o operador que o discador terminou uma agenda pessoal
   TOnFimDiscandoAgp = procedure() of object;
 
   TClienteGennex = class(TThread)
